@@ -15,6 +15,3 @@ _start:
 	mov 	rax, 60
 	mov	rdi, 0
 	syscall
-
-nasm -f elf64 -o main.o main.asm
-ld -o main main.o
