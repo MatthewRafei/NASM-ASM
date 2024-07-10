@@ -1,5 +1,5 @@
 section .data
-	msg: db	"Hello, world!"
+	msg: db	"Hello, world!", 0xA, 0
 	msglen: equ $-msg
 
 section .text
@@ -15,3 +15,6 @@ _start:
 	mov 	rax, 60
 	mov	rdi, 0
 	syscall
+
+nasm -f elf64 -o main.o main.asm
+ld -o main main.o
